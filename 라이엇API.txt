@@ -1,0 +1,11 @@
+▼ Key:
+1cf626bc-7f5a-4236-8f5b-803ace8953af
+
+▼ Rate Limit(s):
+500 requests every 10 minutes
+10 requests every 10 seconds
+
+▼ url - api 레퍼런스
+https://kr.api.pvp.net/api/lol/kr/v1.4/summoner/by-name/아이디?api_key=라이엇API키
+ex) 
+https://kr.api.pvp.net/api/lol/kr/v1.4/summoner/by-name/아기향?api_key=1cf626bc-7f5a-4236-8f5b-803ace8953af
