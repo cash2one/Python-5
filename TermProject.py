@@ -6,7 +6,6 @@ Created on Thu May 12 15:54:23 2016
 """
 import os
 import requests
-import time
 """
 URL 임시 초기화
 검색값은 아래와 같다.
@@ -31,18 +30,21 @@ class Database:
             print("2. 챔피언 검색")
             self.inputKey = int(input("메뉴입력 : "))
             if 1 == self.inputKey:
-                print("▼ 소환사 검색")
-                self.summonerName = str(input("소환사ID : "))
-                self.response     = requests.get(("https://{0}.api.pvp.net/api/lol/{0}/v1.4/summoner/by-name/{1}?&api_key={2}").format(self.region, self.summonerName, self.riotApiKey))
-                print(self.response)
-                print(self.response.text)
+                self.searchBySummonerName()
             elif 2 == self.inputKey:
-                print("▼ 챔피언 검색")
-                print("지원되지 않는 버전입니다.")
+                self.searchByChampionName()
             else:
                 print("▼ 잘못된 입력값입니다.")
             input("계속하려면 아무 키나 입력하십시오.")
-
+    def searchBySummonerName(self):
+        print("▼ 소환사 검색")
+        self.summonerName = str(input("소환사ID : "))
+        self.response     = requests.get(("https://{0}.api.pvp.net/api/lol/{0}/v1.4/summoner/by-name/{1}?&api_key={2}").format(self.region, self.summonerName, self.riotApiKey))
+        print(self.response)
+        print(self.response.text)
+    def searchByChampionName(self):
+        print("▼ 챔피언 검색")
+        print("지원되지 않는 버전입니다.")        
 """
 League of Legends
 1. 소환사 검색
